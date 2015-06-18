@@ -5,18 +5,13 @@ import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.content.Context;
-import android.os.Build;
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.support.v4.widget.DrawerLayout;
-import android.widget.ArrayAdapter;
-import android.widget.TextView;
 
 
 public class MainActivity extends ActionBarActivity
@@ -99,7 +94,11 @@ public class MainActivity extends ActionBarActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_new_payment) {
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            fragmentManager.beginTransaction()
+                    .replace(R.id.container, PlaceholderFragment.newInstance(20))
+                    .commit();
             return true;
         }
 
@@ -115,7 +114,7 @@ public class MainActivity extends ActionBarActivity
          * fragment.
          */
         private static final String ARG_SECTION_NUMBER = "section_number";
-
+        private static int mSection = -1;
         /**
          * Returns a new instance of this fragment for the given section
          * number.
@@ -125,6 +124,8 @@ public class MainActivity extends ActionBarActivity
             Bundle args = new Bundle();
             args.putInt(ARG_SECTION_NUMBER, sectionNumber);
             fragment.setArguments(args);
+
+            mSection = sectionNumber;
             return fragment;
         }
 
@@ -132,9 +133,14 @@ public class MainActivity extends ActionBarActivity
         }
 
         @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                                 Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_main, container, false);
+        public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+            View rootView = null;
+            if(mSection != 20) {
+                rootView = inflater.inflate(R.layout.fragment_main, container, false);
+            }else{
+                rootView = inflater.inflate(R.layout.fragment_new_payment, container, false);
+            }
+
             return rootView;
         }
 
