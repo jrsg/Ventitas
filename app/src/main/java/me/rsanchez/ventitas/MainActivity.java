@@ -1,6 +1,7 @@
 package me.rsanchez.ventitas;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
@@ -12,6 +13,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.support.v4.widget.DrawerLayout;
+import android.widget.BaseAdapter;
+import android.widget.ListView;
 
 
 public class MainActivity extends ActionBarActivity
@@ -26,6 +29,7 @@ public class MainActivity extends ActionBarActivity
      * Used to store the last screen title. For use in {@link #restoreActionBar()}.
      */
     private CharSequence mTitle;
+    protected static ClientAdapter mClientAdapter = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +44,10 @@ public class MainActivity extends ActionBarActivity
         mNavigationDrawerFragment.setUp(
                 R.id.navigation_drawer,
                 (DrawerLayout) findViewById(R.id.drawer_layout));
+
+
+        mClientAdapter = new ClientAdapter(this);
+
     }
 
     @Override
@@ -95,10 +103,14 @@ public class MainActivity extends ActionBarActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_new_payment) {
-            FragmentManager fragmentManager = getSupportFragmentManager();
+            Intent intent = new Intent(this, PaymentActivity.class);
+
+            startActivity(intent);
+            /*FragmentManager fragmentManager = getSupportFragmentManager();
             fragmentManager.beginTransaction()
                     .replace(R.id.container, PlaceholderFragment.newInstance(20))
-                    .commit();
+                    .addToBackStack(null)
+                    .commit();*/
             return true;
         }
 
@@ -135,10 +147,22 @@ public class MainActivity extends ActionBarActivity
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
             View rootView = null;
-            if(mSection != 20) {
-                rootView = inflater.inflate(R.layout.fragment_main, container, false);
-            }else{
-                rootView = inflater.inflate(R.layout.fragment_new_payment, container, false);
+
+            switch (mSection){
+                case 1:
+                    rootView = inflater.inflate(R.layout.fragment_client_list, container, false);
+                    ListView clientList = (ListView) rootView.findViewById(R.id.client_list);
+                    clientList.setAdapter(mClientAdapter);
+                    break;
+                case 20:
+                    rootView = inflater.inflate(R.layout.payment_form, container, false);
+
+
+
+                    break;
+                default:
+                    rootView = inflater.inflate(R.layout.fragment_main, container, false);
+                    break;
             }
 
             return rootView;
