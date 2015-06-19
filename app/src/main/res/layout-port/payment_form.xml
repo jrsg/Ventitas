@@ -9,17 +9,17 @@
     android:padding="8dp"
     android:orientation="vertical">
 
-    <TextView
+    <!--<TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:text="@string/new_payment_client_name_title"/>
+        android:textAppearance="?android:attr/textAppearanceListItemSmall"
+        android:text="@string/new_payment_client_name_title"/>-->
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/new_payment_client_name"
+        android:inputType="textPersonName"
         android:textSize="16sp"
         android:hint="@string/new_payment_client_name_hint"/>
 
@@ -33,6 +33,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/new_payment_amount"
+        android:inputType="number"
         android:textSize="16sp"
         android:hint="@string/new_payment_amount_hint"/>
 

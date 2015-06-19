@@ -4,6 +4,7 @@
     tools:context=".MainActivity">
     <item
         android:id="@+id/action_new_payment"
+        android:icon="@drawable/ic_add_white_24dp"
         android:title="@string/action_new_payment"
         app:showAsAction="withText|ifRoom" />
     <item

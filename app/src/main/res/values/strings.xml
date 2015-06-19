@@ -20,4 +20,5 @@
     <string name="new_payment_amount_hint">Importe</string>
     <string name="new_payment_save_button">Guardar</string>
     <string name="new_payment_client_name_title">Nuevo pago</string>
+    <string name="payment_activity_title">Pago</string>
 </resources>

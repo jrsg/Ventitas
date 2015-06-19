@@ -2,13 +2,14 @@ package me.rsanchez.ventitas;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.View;
 import android.widget.TextView;
 
 /**
  * Created by Administrador on 18/06/2015.
  */
-public class PaymentActivity extends Activity {
+public class PaymentActivity extends ActionBarActivity {
     //private ClientAdapter mClientAdapter = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,7 +17,7 @@ public class PaymentActivity extends Activity {
 
         //MainActivity.mClientAdapter = new ClientAdapter(this);
 
-
+        setTitle(R.string.payment_activity_title);
         setContentView(R.layout.payment_form);
     }
 
