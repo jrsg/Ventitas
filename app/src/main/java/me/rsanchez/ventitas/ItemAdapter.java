@@ -5,36 +5,34 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Administrador on 18/06/2015.
+ * Created by Administrador on 19/06/2015.
  */
-public class ClientAdapter extends BaseAdapter {
-    private static final List<Client> mClients = new ArrayList<Client>();
+public class ItemAdapter extends BaseAdapter {
+    private static final List<Item> mItems = new ArrayList<Item>();
     private Context mContext = null;
 
-    public ClientAdapter(Context context){
+    public ItemAdapter(Context context){
         mContext = context;
     }
 
-    public void add(Client client) {
-        mClients.add(client);
+    public void add(Item item) {
+        mItems.add(item);
         notifyDataSetChanged();
     }
-
     @Override
     public int getCount() {
-        return mClients.size();
+        return mItems.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return mClients.get(position);
+        return mItems.get(position);
     }
 
     @Override
@@ -44,7 +42,7 @@ public class ClientAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        final Client client = mClients.get(position);
+        final Item item = mItems.get(position);
 
         //RelativeLayout clientLayout = null;
 
@@ -58,7 +56,7 @@ public class ClientAdapter extends BaseAdapter {
 
 
         TextView textView = (TextView) convertView.findViewById(android.R.id.text1);
-        textView.setText(client.getName());
+        textView.setText(item.getDescripton());
         return convertView;
     }
 }

@@ -20,7 +20,11 @@
         <activity
             android:name=".PaymentActivity"
             android:label="Ventitas">
+        </activity>
 
+        <activity
+            android:name=".AddItemActivity"
+            android:label="Ventitas">
         </activity>
     </application>
 

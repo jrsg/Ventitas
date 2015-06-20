@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin">
+
+
+    <ScrollView
+        android:id="@+id/scroll_relative"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true">
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/add_item_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:onClick="addItems"
+                android:text="Añadir" />
+
+            <TextView
+                android:id="@+id/item_id_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/add_item_button"
+                android:layout_marginBottom="8dp"
+                android:text="ID"
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/item_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/item_id_label"
+                android:layout_marginBottom="8dp"
+                android:hint="SKU o número de artículo"
+                android:paddingBottom="8dp" />
+
+            <TextView
+                android:id="@+id/item_description_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/item_id"
+                android:layout_marginBottom="8dp"
+                android:text="Nombre o descripción"
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/item_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/item_description_label"
+                android:layout_marginBottom="8dp"
+                android:hint="Nombre o modelo"
+                android:paddingBottom="8dp" />
+
+            <TextView
+                android:id="@+id/item_price_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/item_description"
+                android:layout_marginBottom="8dp"
+                android:text="Precio"
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/item_price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/item_price_label"
+                android:layout_marginBottom="8dp"
+                android:hint="$"
+                android:inputType="numberDecimal"
+                android:paddingBottom="8dp" />
+
+            <TextView
+                android:id="@+id/item_quantity_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/item_price"
+                android:layout_marginBottom="8dp"
+                android:text="Cantidad"
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/item_quantity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/item_quantity_label"
+                android:layout_marginBottom="8dp"
+                android:inputType="number"
+                android:paddingBottom="8dp" />
+
+            <TextView
+                android:id="@+id/item_unit_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/item_quantity"
+                android:layout_marginBottom="8dp"
+                android:text="Unidad"
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/item_unit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/item_unit_label"
+                android:layout_marginBottom="8dp"
+                android:paddingBottom="8dp" />
+
+            <TextView
+                android:id="@+id/item_size_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/item_unit"
+                android:layout_marginBottom="8dp"
+                android:text="Tamaño"
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/item_size"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/item_size_label"
+                android:layout_marginBottom="8dp"
+                android:paddingBottom="8dp" />
+
+            <TextView
+                android:id="@+id/item_color_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/item_size"
+                android:layout_marginBottom="8dp"
+                android:text="Color"
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/item_color"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/item_color_label"
+                android:layout_marginBottom="8dp"
+                android:paddingBottom="8dp" />
+
+            <TextView
+                android:id="@+id/item_comments_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/item_color"
+                android:layout_marginBottom="8dp"
+                android:text="Comentarios"
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/item_comments"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/item_comments_label"
+                android:layout_marginBottom="8dp"
+                android:paddingBottom="8dp" />
+
+        </RelativeLayout>
+    </ScrollView>
+
+
+</RelativeLayout>

@@ -21,4 +21,12 @@
     <string name="new_payment_save_button">Guardar</string>
     <string name="new_payment_client_name_title">Nuevo pago</string>
     <string name="payment_activity_title">Pago</string>
+
+    <string name="cicle_prompt">Seleccione un ciclo</string>
+
+    <string-array name="cicles">
+        <item>Mayo 2015</item>
+        <item>Junio 2015</item>
+        <item>Julio 2015</item>
+    </string-array>
 </resources>
