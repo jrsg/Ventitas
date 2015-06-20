@@ -11,33 +11,29 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Administrador on 19/06/2015.
+ * Created by Administrador on 20/06/2015.
  */
-public class ItemAdapter extends BaseAdapter {
-    private static final List<Item> mItems = new ArrayList<Item>();
+public class SaleAdapter extends BaseAdapter {
+    private static final List<Sale> mSales = new ArrayList<Sale>();
     private Context mContext = null;
 
-    public ItemAdapter(Context context){
+    public SaleAdapter(Context context){
         mContext = context;
     }
 
-    public void clear(){
-        mItems.clear();
+    public void add(Sale sale) {
+        mSales.add(sale);
         notifyDataSetChanged();
     }
 
-    public void add(Item item) {
-        mItems.add(item);
-        notifyDataSetChanged();
-    }
     @Override
     public int getCount() {
-        return mItems.size();
+        return mSales.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return mItems.get(position);
+        return mSales.get(position);
     }
 
     @Override
@@ -47,7 +43,7 @@ public class ItemAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        final Item item = mItems.get(position);
+        final Sale sale = mSales.get(position);
 
         //RelativeLayout clientLayout = null;
 
@@ -61,7 +57,7 @@ public class ItemAdapter extends BaseAdapter {
 
 
         TextView textView = (TextView) convertView.findViewById(android.R.id.text1);
-        textView.setText(item.getDescripton());
+        textView.setText(sale.getCycle());
         return convertView;
     }
 }

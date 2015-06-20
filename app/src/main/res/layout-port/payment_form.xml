@@ -28,7 +28,7 @@
                     android:textSize="12sp" />
 
                 <Spinner
-                    android:id="@+id/spinner1"
+                    android:id="@+id/cycle_id"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:entries="@array/cicles"
@@ -67,7 +67,7 @@
                     android:textSize="16sp"
                     android:hint="@string/new_payment_amount_hint"/>-->
 
-                <TextView
+                <!--<<TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
@@ -75,7 +75,7 @@
                     android:text="Metodo de pago"
                     android:textSize="12sp" />
 
-                <RadioGroup
+                RadioGroup
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingBottom="16dp">
@@ -91,7 +91,7 @@
                         android:layout_height="wrap_content"
                         android:text="Efectivo, en pagos fijos"
                         android:textSize="16sp" />
-                </RadioGroup>
+                </RadioGroup>-->
 
             </LinearLayout>
 
@@ -112,7 +112,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:onClick="addItems"
-                    android:text="Añadir artículos" />
+                    android:drawableLeft="@drawable/ic_add_white_24dp"
+                    android:text="Artículos" />
 
                 <ListView
                     android:id="@+id/payment_item_list"

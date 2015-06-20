@@ -13,7 +13,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.support.v4.widget.DrawerLayout;
-import android.widget.BaseAdapter;
 import android.widget.ListView;
 
 
@@ -30,6 +29,7 @@ public class MainActivity extends ActionBarActivity
      */
     private CharSequence mTitle;
     protected static ClientAdapter mClientAdapter = null;
+    protected static SaleAdapter mSaleAdapter = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +47,7 @@ public class MainActivity extends ActionBarActivity
 
 
         mClientAdapter = new ClientAdapter(this);
+        mSaleAdapter = new SaleAdapter(this);
 
     }
 
@@ -150,9 +151,9 @@ public class MainActivity extends ActionBarActivity
 
             switch (mSection){
                 case 1:
-                    rootView = inflater.inflate(R.layout.fragment_client_list, container, false);
-                    ListView clientList = (ListView) rootView.findViewById(R.id.client_list);
-                    clientList.setAdapter(mClientAdapter);
+                    rootView = inflater.inflate(R.layout.fragment_sales_list, container, false);
+                    ListView saleList = (ListView) rootView.findViewById(R.id.sale_list);
+                    saleList.setAdapter(mSaleAdapter);
                     break;
                 case 20:
                     rootView = inflater.inflate(R.layout.payment_form, container, false);

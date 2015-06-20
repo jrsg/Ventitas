@@ -16,13 +16,12 @@ public class Client {
     private String mName = "";
     private ArrayList<JSONObject> mPaymentLog = new ArrayList<JSONObject>();
 
-    public Client(String id, String name, Float amount){
+    public Client(String id, String name){
         setId(id);
         setName(name);
-        setAmount(amount);
     }
 
-    public void setAmount(Float amount){
+    /*public void setAmount(Float amount){
         JSONObject json = new JSONObject();
         try {
             json.put("amount", amount.longValue());
@@ -32,7 +31,7 @@ public class Client {
         }
 
         mPaymentLog.add(json);
-    }
+    }*/
 
     public void setId(String id){
         mId = id;
@@ -48,5 +47,9 @@ public class Client {
 
     public String getName(){
         return mName;
+    }
+
+    public String toString(){
+        return getName();
     }
 }
