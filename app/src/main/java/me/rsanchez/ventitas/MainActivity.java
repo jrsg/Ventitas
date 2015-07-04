@@ -2,11 +2,13 @@ package me.rsanchez.ventitas;
 
 import android.app.Activity;
 import android.content.Intent;
+
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.os.Bundle;
+
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -49,15 +51,25 @@ public class MainActivity extends ActionBarActivity
         mClientAdapter = new ClientAdapter(this);
         mSaleAdapter = new SaleAdapter(this);
 
+
+
+
+
+
+
+
+
     }
 
     @Override
     public void onNavigationDrawerItemSelected(int position) {
         // update the main content by replacing fragments
         FragmentManager fragmentManager = getSupportFragmentManager();
-        fragmentManager.beginTransaction()
-                .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
-                .commit();
+
+        SalesFragment fragment = new SalesFragment();
+
+
+        fragmentManager.beginTransaction().replace(R.id.container, fragment).commit();
     }
 
     public void onSectionAttached(int number) {
